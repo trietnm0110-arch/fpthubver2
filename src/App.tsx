@@ -32,6 +32,7 @@ import { ReflectionModal } from './components/ReflectionModal';
 import { HistoryModal } from './components/HistoryModal';
 import { SettingsModal } from './components/SettingsModal';
 import { AccountModal } from './components/AccountModal';
+import { StudentEntry } from './components/StudentEntry';
 import { firebaseConfigured, loadStudyData, saveStudyData, subscribeToAuth } from './utils/firebase';
 import {
   CalendarDays,
@@ -494,6 +495,10 @@ export default function App() {
         Đang tải tài khoản và dữ liệu học tập...
       </div>
     );
+  }
+
+  if (!user) {
+    return <StudentEntry />;
   }
 
   return (
